@@ -13,6 +13,7 @@ Upcoming presentations at:
 - https://www.jonthebeach.com/: [Are we really moving faster? How visualizing flow changed the way we work](https://www.jonthebeach.com/speakers/136/Roman+Pickl)
 
 Best way to reach me is via the contact information listed on my website: https://pickl.eu/
+
 If you find a problem or something to improve please create a Pull Request.
 
 ## References
