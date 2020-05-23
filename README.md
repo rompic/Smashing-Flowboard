@@ -1,5 +1,5 @@
 # Flowboard for Smashing
-This is an example dashboard for visualizing flow using Smashing and data from Jira, GIT and Jenkins
+This is an example dashboard for visualizing flow using Smashing and data from Jira, GitHub and Jenkins
 
 Status Dashboard:
 ![Status Dashboard](status.png "Status Dashboard")
