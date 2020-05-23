@@ -1,0 +1,11 @@
+# COLOR GUIDE
+# holiday = lightgreen
+# deadline = red
+# release = pink
+# misc = white
+
+# the current code assumes that at least one event is defined here. It also acts as an example for static events e.g. team meetings
+:events:
+  - :name: "Christmas party"
+    :date: "Dec 12, 2020"
+    :background: "white"

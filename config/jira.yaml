@@ -1,0 +1,37 @@
+---
+:projectname: YOUR_JIRA_PROJECT_NAME
+:site: https://jira.example.com
+:site_extern: https://jira.example2.com
+:username: your_username
+:password: your_password
+:wip_status:
+ - In Progress
+ - Resolved
+:flow_time_efficiency_current_status: closed
+:flow_time_efficiency_resolution: fixed
+:flow_time_efficiency_work_status:
+ - In Progress
+:flow_time_efficiency_work_new_status:
+ - Open
+ - In Progress
+:flow_velocity_current_status: closed
+:flow_velocity_resolution: fixed
+:flow_distribution_status: closed
+ # Current status of the flow item, set to ~ if it does not matter
+:flow_distribution_current_status: closed
+ # Resolution of the flow item, set to ~ if it does not matter
+:flow_distribution_resolution: fixed
+:months: 6
+:release_filter:
+ - alpha
+ - beta
+ - rc
+:issuecount_mapping:
+# in the jobs the project variable is replaced as described in https://stackoverflow.com/a/20467816
+ filter_open_issues: project = %{project} AND ((duedate is not EMPTY AND status = open) OR status = prepared)
+ filter_in_progress_issues: project = %{project} AND status = "In Progress"
+ filter_resolved_issues: project = %{project} AND status = Resolved
+ filter_done_but_not_released_issues: project = %{project} AND status = "closed" AND resolution=fixed AND (fixVersion in unreleasedVersions())
+:issuecount_mapping_external:
+ filter_open_support_requests_sw: filter = "Support_SW" AND status not in (resolved, closed, rejected)
+ filter_open_support_requests_hw: filter = "Support_HW" AND status not in (resolved, closed, rejected)

@@ -1,0 +1,16 @@
+<h1 class="title" data-bind="title"></h1>
+
+<ul class="list-nostyle">
+  <li data-foreach-item="items">
+    <span class="label" data-bind="item.title"></span>
+    <ul>
+        <li data-foreach-subelement="item.subelements">
+            <span class="label" data-bind="subelement.label"></span>
+            <span class="value" data-bind="subelement.value"></span>
+        </li>
+    </ul>
+  </li>
+</ul>
+
+<p class="more-info" data-bind="moreinfo"></p>
+<p class="updated-at" data-bind="updatedAtMessage"></p>

@@ -1,0 +1,41 @@
+<% content_for :title do %>Status Dashboard<% end %>
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="a_timeline" data-view="Timeline" data-title="Milestones" data-event-click="redirect"></div>
+    </li>
+    <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
+      <div data-id="yourOrg/yourRepo" data-view="HotClickableNumber" data-title="Open Pull requests" data-event-click="redirect" data-cool="10" data-warm="20"></div>
+    </li>
+    <li data-row="1" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-id="filter_open_support_requests_sw" data-view="HotClickableNumber" data-title="Open Support Requests SW" data-event-click="redirect" data-cool="10" data-warm="20"></div>
+    </li>
+    <li data-row="1" data-col="4" data-sizex="1" data-sizey="1">
+      <div data-id="filter_open_support_requests_hw" data-view="HotClickableNumber" data-title="Open Support Requests HW" data-event-click="redirect" data-cool="10" data-warm="20"></div>
+    </li>
+    <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="filter_open_issues" data-view="HotClickableNumber" data-title="Tickets scheduled" data-event-click="redirect" data-cool="20" data-warm="100"></div>
+    </li>
+    <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+      <div data-id="filter_in_progress_issues" data-view="HotClickableNumber" data-title="Tickets in progress" data-event-click="redirect" data-cool="20" data-warm="50"></div>
+    </li>
+    <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-id="filter_resolved_issues" data-view="HotClickableNumber" data-title="Tickets in review" data-event-click="redirect" data-cool="20" data-warm="40"></div>
+    </li>
+    <li data-row="2" data-col="4" data-sizex="1" data-sizey="1">
+      <div data-id="filter_done_but_not_released_issues" data-view="HotClickableNumber" data-title="Tickets done but not released" data-event-click="redirect" data-cool="40" data-warm="100"></div>
+    </li>
+    <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="master" data-view="JenkinsBuild" data-min="0" data-max="100" data-event-click="redirect"></div>
+    </li>
+    <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
+      <div data-id="master_test" data-view="JenkinsBuild" data-min="0" data-max="100" data-event-click="redirect"></div>
+    </li>
+    <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-id="master_integration_test" data-view="JenkinsBuild" data-min="0" data-max="100" data-event-click="redirect"></div>
+    </li>
+    <li data-row="3" data-col="4" data-sizex="1" data-sizey="1">
+      <div data-id="master_hw_test" data-min="0" data-max="100" data-view="JenkinsBuild" data-event-click="redirect"></div>
+    </li>
+  </ul>
+</div>

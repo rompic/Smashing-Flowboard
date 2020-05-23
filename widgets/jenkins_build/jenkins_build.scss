@@ -1,0 +1,33 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color:  #4b5f24;
+
+$title-color:       rgba(255, 255, 255, 1);
+$moreinfo-color:    rgba(255, 255, 255, 0.7);
+
+$meter-background:  rgba(20, 20, 20, 1);
+
+// ----------------------------------------------------------------------------
+// Widget-jenkins-build styles
+// ----------------------------------------------------------------------------
+.widget-jenkins-build {
+  background-color: $background-color;
+
+  input.jenkins-build {
+    background-color: $meter-background;
+    color: #fff;
+  }
+
+  .title {
+    color: $title-color;
+  }
+
+  .more-info {
+    color: $moreinfo-color;
+  }
+
+  .updated-at {
+    color: rgba(0, 0, 0, 1);
+  }
+}

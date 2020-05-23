@@ -1,0 +1,31 @@
+<script type='text/javascript'>
+$(function() {
+  // These settings override the defaults set in application.coffee. You can do this on a per dashboard basis.
+  //Dashing.gridsterLayout('[{"col":2,"row":1},{"col":1,"row":1},{"col":3,"row":1},{"col":2,"row":2},{"col":3,"row":2},{"col":1,"row":2},{"col":5,"row":1},{"col":4,"row":2},{"col":2,"row":3}]')
+  Dashing.widget_base_dimensions = [370, 340]
+  Dashing.numColumns = 4
+});
+</script>
+<% content_for :title do %>Metrics Dashboard<% end %>
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div title="The number of flow items being actively worked on in a value stream, denoting the amount of WiP (work in progress). Monitors over and under-utilization, which can lead to reduced productivity." data-id="flow_load" data-view="HotClickableGraph" data-title="Flow Load (Current)" data-event-click="redirect" data-cool="30" data-warm="50" data-moreinfo="flow items"></div>
+    </li>
+    <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
+      <div title="The duration that it takes for a flow item to go from being accepted for work into the value stream to completion, including both active and wait time. Monitors if Time to Value is getting longer." data-id="flow_time" data-view="HotClickableNumber" data-title="Flow Time (Average)" data-event-click="redirect" data-cool="20" data-warm="50" data-moreinfo="days"></div>
+    </li>
+    <li data-row="1" data-col="3" data-sizex="1" data-sizey="1">
+      <div title="The proportion of time flow times are actively worked on to the total time elapsed. Identify when waste is increasing or decreasing in your processes." data-id="flow_efficiency" data-view="HotClickableNumber" data-title="Flow Efficiency (Average)" data-event-click="redirect" data-cool="40" data-warm="15" data-moreinfo="%"></div>
+    </li>
+    <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
+      <div title="Mutually Exclusive and Comprehensively Exhaustive allocation of flow items in a particular flow state across a measure of time. Helps prioritize specific types of work during specific time frames in order to meet a desired business outcome." data-id="flow_distribution" data-view ="BarChart" data-title="Flow Distribution" data-moreinfo="" data-event-click="redirect"></div>
+    </li>
+    <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">
+      <div title="The number of flow items done in a given time. Also referred to as throughput. Gauges whether value delivery is accelerating." data-id="flow_velocity" data-view ="BarChart" data-title="Flow Velocity" data-moreinfo="" data-event-click="redirect"></div>
+    </li>
+    <li data-row="1" data-col="4" data-sizex="1" data-sizey="2">
+      <div title="Link to Business results.&#10;Happiness: &#10;- eNPS stands for Employer Net Promoter Score.&#10;- To measure culture The Westrum organizational typology model is used." data-id="business_results" data-view ="ListWithSubitems" data-title="Business Results" data-unordered="true" data-moreinfo="" class=list-nostyle></div>
+    </li>
+  </ul>
+</div>
