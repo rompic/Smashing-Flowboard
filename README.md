@@ -60,4 +60,4 @@ To understand how this dashboard works have a look at the following files:
 * Copy your config.ru to the config folder
 * ```docker run -e GEMS="octokit jira-ruby sinatra_cyclist" -v=C:\<path>\Smashing-Flowboard\config:/config -v=C:\<path>\Smashing-Flowboard\jobs:/jobs -v=C:\<path>\Smashing-Flowboard\widgets:/widgets -v=C:\<path>\Smashing-Flowboard\dashboards:/dashboards -v=C:\<path>\Smashing-Flowboard\assets:/assets -p 8080:3030 visibilityspots/smashing```
 * Navigate to http://localhost:8080
-* Use localhost:8080/_cycle?duration=60 to cycle through the dashboards every 60 seconds
+* Use http://localhost:8080/_cycle?duration=60 to cycle through the dashboards every 60 seconds
