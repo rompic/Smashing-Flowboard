@@ -10,7 +10,7 @@ Metrics Dashboard:
 Data has been changed to protect the innocent.
 
 ## More Information
-For more context see my blog post at [on situational awareness and running the dashboard on a raspberry pi](https://pickl.eu/blog/are-we-really-moving-faster-how-visualizing-flow-changed-the-way-we-work/).
+For more context see my blog post on [situational awareness and running the dashboard on a raspberry pi](https://pickl.eu/blog/are-we-really-moving-faster-how-visualizing-flow-changed-the-way-we-work/).
 
 Upcoming presentations at: 
 - ~https://www.jonthebeach.com/: [Are we really moving faster? How visualizing flow changed the way we work](https://www.jonthebeach.com/speakers/136/Roman+Pickl)~ Cancelled due to Covid-19
