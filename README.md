@@ -12,9 +12,10 @@ Data has been changed to protect the innocent.
 ## More Information
 For more context see my blog post on [situational awareness and running the dashboard on a raspberry pi](https://pickl.eu/blog/are-we-really-moving-faster-how-visualizing-flow-changed-the-way-we-work/).
 
-Upcoming presentations at: 
-- ~https://www.jonthebeach.com/: [Are we really moving faster? How visualizing flow changed the way we work](https://www.jonthebeach.com/speakers/136/Roman+Pickl)~ Cancelled due to Covid-19
-- [DevOps Enterprise Summit Las Vegas - Virtual](https://events.itrevolution.com/virtual/)
+Presented at: 
+- ALL DAY DEVOPS 2020: [Slides](https://www2.slideshare.net/RomanPickl/are-we-really-moving-faster-how-visualizing-flow-changed-the-way-we-work) - [Video](https://content.sonatype.com/2020addo-ct/addo2020-ct-pickl)
+- DevOps Enterprise Summit 2020 Las Vegas (Virtual): [Slides](https://www.slideshare.net/RomanPickl/are-we-really-moving-faster-how-visualizing-flow-changed-the-way-we-work-devops-enterprise-summit-las-vegas-virtual-2020-238929654) - [Video](http://videolibrary.doesvirtual.com?video=466912356)
+
 
 Best way to reach me is via the contact information listed on my website: https://pickl.eu/
 
