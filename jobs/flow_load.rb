@@ -30,8 +30,13 @@ SCHEDULER.every '30m', first_in: 0, allow_overlapping: false do |_job|
   (months - 1).downto(0) do |i|
     releases_not_released_at_this_point_in_time = releases.select{ |e| e.attrs.key?('releaseDate') }.select { |e| Date.parse(e.releaseDate) >= first_day_of_current_month.prev_month(i)}
     relevant_releases = unreleased_releases + releases_not_released_at_this_point_in_time
-    relevant_releases_string = relevant_releases.map(&:name).join('","')
-    month_query = format('%<base_query>s on startofMonth(%<month_offset>s) or (status = "%<flow_load_current_status>s" AND resolution=%<flow_load_resolution>s AND fixVersion in ("%<releases>s")))',base_query: base_query, month_offset: -i, flow_load_current_status: $JIRA_CONFIG[:flow_load_current_status], flow_load_resolution: $JIRA_CONFIG[:flow_load_resolution], releases: relevant_releases_string)
+    if relevant_releases.empty?
+      month_query = format('%<base_query>s on startofMonth(%<month_offset>s))',base_query: base_query, month_offset: -i)
+    else
+      relevant_releases_string = relevant_releases.map(&:name).join('","')
+      month_query = format('%<base_query>s on startofMonth(%<month_offset>s) or (status = "%<flow_load_current_status>s" AND resolution=%<flow_load_resolution>s AND fixVersion in ("%<releases>s")))',base_query: base_query, month_offset: -i, flow_load_current_status: $JIRA_CONFIG[:flow_load_current_status], flow_load_resolution: $JIRA_CONFIG[:flow_load_resolution], releases: relevant_releases_string)
+    end
+    
     data.push(x: first_day_of_current_month.prev_month(i).to_time.to_i, y: client.Issue.jql(month_query, max_results: 0))
   end
   flow_load_query = format('%<base_query>s on now() or (status = "%<flow_load_current_status>s" AND resolution=%<flow_load_resolution>s AND fixVersion in unreleasedVersions()))',base_query: base_query, flow_load_current_status: $JIRA_CONFIG[:flow_load_current_status], flow_load_resolution: $JIRA_CONFIG[:flow_load_resolution])
