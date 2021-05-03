@@ -39,12 +39,14 @@ SCHEDULER.every '30m', first_in: 0, allow_overlapping: false do |_job|
     
     data.push(x: first_day_of_current_month.prev_month(i).to_time.to_i, y: client.Issue.jql(month_query, max_results: 0))
   end
-  flow_load_query = format('%<base_query>s on now() or (status = "%<flow_load_current_status>s" AND resolution=%<flow_load_resolution>s AND fixVersion in unreleasedVersions()))',base_query: base_query, flow_load_current_status: $JIRA_CONFIG[:flow_load_current_status], flow_load_resolution: $JIRA_CONFIG[:flow_load_resolution])
+  flow_load_query = format('%<base_query>s on now() or (status = "%<flow_load_current_status>s" AND resolution=%<flow_load_resolution>s AND fixVersion in unreleasedVersions())',base_query: base_query, flow_load_current_status: $JIRA_CONFIG[:flow_load_current_status], flow_load_resolution: $JIRA_CONFIG[:flow_load_resolution])
   archived_versions = releases.select{ |e| e.archived }
-  unless archived_versions.empty?
+  if archived_versions.empty?
+    flow_load_query = format('%<flow_load_query>s)', flow_load_query: flow_load_query)
+  else
     archived_versions_string = archived_versions.map(&:name).join('","')
-    flow_load_query = format('%<flow_load_query>s AND fixVersion not in ("%<archived_versions>s")', flow_load_query: flow_load_query, archived_versions: archived_versions_string)
-  end
+    flow_load_query = format('%<flow_load_query>s AND (fixVersion not in ("%<archived_versions>s") or fixVersion=empty))', flow_load_query: flow_load_query, archived_versions: archived_versions_string)
+  end  
   data.push(x: Time.now.to_i, y: client.Issue.jql(flow_load_query, max_results: 0))
   flow_load_link = "#{options[:site]}/issues/?jql=#{flow_load_query}"
   send_event('flow_load', points: data, link: flow_load_link)
